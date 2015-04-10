@@ -17,7 +17,7 @@ import java.net.URL;
 
 import static javafx.concurrent.Worker.State.FAILED;
 
-public class SimpleSwingBrowser extends JFrame {
+public class HsBrowser extends JFrame {
 
     private final JFXPanel jfxPanel = new JFXPanel();
     private WebEngine engine;
@@ -28,7 +28,7 @@ public class SimpleSwingBrowser extends JFrame {
     private final JProgressBar progressBar = new JProgressBar();
 
   
-    public SimpleSwingBrowser() {
+    public HsBrowser() {
         super();
         initComponents();
     }
@@ -65,7 +65,7 @@ public class SimpleSwingBrowser extends JFrame {
             engine = view.getEngine();
             engine.titleProperty().addListener((ObservableValue<? extends String> observable, String oldValue, final String newValue) -> {
                 SwingUtilities.invokeLater(() -> {
-                    SimpleSwingBrowser.this.setTitle(newValue);
+                    HsBrowser.this.setTitle(newValue);
                 });
             });
             
@@ -127,7 +127,7 @@ public class SimpleSwingBrowser extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            SimpleSwingBrowser browser = new SimpleSwingBrowser();
+            HsBrowser browser = new HsBrowser();
             browser.setLocationRelativeTo(null);
             browser.setVisible(true);
             // browser.loadURL("http://oracle.com");
